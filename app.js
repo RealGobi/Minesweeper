@@ -4,4 +4,16 @@ document.addEventListener('DOMContentLoaded', () => {
   let squares = [];
   let bombAmount = 20;
 
+  // create board
+
+  function createBoard(){
+    
+    for (let i = 0; i < width*width; i++) {
+      const square = document.createElement('div');
+      square.setAttribute('id', i);
+      grid.appendChild(square);
+      squares.push(square);
+    }
+  }
+createBoard();
 });
