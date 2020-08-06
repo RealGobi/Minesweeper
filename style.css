@@ -1,0 +1,13 @@
+.grid {
+  height: 400px;
+  width: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background: gray;
+}
+
+.grid div {
+  height: 10px;
+  width: 10px;
+  background: lightgray;
+}
