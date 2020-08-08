@@ -31,6 +31,15 @@ document.addEventListener('DOMContentLoaded', () => {
     const isLeftEgde = (i % width === 0); // no sq  to the left
     const isRightEgde = (i % width === width -1); // no sq to the rigth
 
+    if (squares[1].classList.contains('valid')) {
+      if (i > 0 && !isLeftEgde && squares[i -1].classList.contains('bomb')); total++;
+      if(i > 9 && !isRightEgde && squares[i + 1 - width.classList.contains('bomb')]); total ++;
+
+      squares[1].setAttribute('data', total);
+      console.log(squares[i]);
+      
+    }
+
     
   }
 createBoard();
