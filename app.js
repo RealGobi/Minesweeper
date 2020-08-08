@@ -23,5 +23,15 @@ document.addEventListener('DOMContentLoaded', () => {
       squares.push(square);
     }
   }
+
+  // add number
+
+  for (let i = 0; i < squares.length; i++) {
+    let total = 0;
+    const isLeftEgde = (i % width === 0); // no sq  to the left
+    const isRightEgde = (i % width === width -1); // no sq to the rigth
+
+    
+  }
 createBoard();
 });
