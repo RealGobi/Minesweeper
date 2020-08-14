@@ -11,6 +11,9 @@
   width: 40px;
 }
 
+.checked {
+  background-color: greenyellow;
+}
 .bomb {
   background: firebrick;
 }
