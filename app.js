@@ -33,13 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
       for (let i = 0; i < squares.length; i++) {
         let total = 0;
-        const isLeftEgde = (i % width === 0); // no sq  to the left
-        const isRightEgde = (i % width === width -1); // no sq to the rigth
+        const isLeftEdge = (i % width === 0); // no sq  to the left
+        const isRightEdge = (i % width === width -1); // no sq to the rigth
     
         if (squares[i].classList.contains('valid')) {
-          if (i > 0 && !isLeftEgde && squares[i -1].classList.contains('bomb')); total++;
-          if(i > 9 && !isRightEgde && squares[i +1 - width].classList.contains('bomb')); total ++;
-    
+          if (i > 0 && !isLeftEdge && squares[i -1].classList.contains('bomb')) total++;
+          if (i > 9 && !isRightEdge && squares[i +1 -width].classList.contains('bomb')) total ++;
           squares[i].setAttribute('data', total);
           console.log(squares[i]);
           
