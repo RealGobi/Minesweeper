@@ -15,32 +15,54 @@ document.addEventListener('DOMContentLoaded', () => {
     
     
     
-    for (let i = 0; i < width*width; i++) {
+    for (let i = 0; i < width * width; i++) {
       const square = document.createElement('div');
       square.setAttribute('id', i);
       square.classList.add(shuffledArray[i]);
       grid.appendChild(square);
       squares.push(square);
+
+      // normal click
+
+      square.addEventListener('click', function(e){
+        click(square);
+      });
     }
-  }
-
-  // add number
-
-  for (let i = 0; i < squares.length; i++) {
-    let total = 0;
-    const isLeftEgde = (i % width === 0); // no sq  to the left
-    const isRightEgde = (i % width === width -1); // no sq to the rigth
-
-    if (squares[1].classList.contains('valid')) {
-      if (i > 0 && !isLeftEgde && squares[i -1].classList.contains('bomb')); total++;
-      if(i > 9 && !isRightEgde && squares[i + 1 - width.classList.contains('bomb')]); total ++;
-
-      squares[1].setAttribute('data', total);
-      console.log(squares[i]);
-      
-    }
-
     
+      // add number
+    
+      for (let i = 0; i < squares.length; i++) {
+        let total = 0;
+        const isLeftEgde = (i % width === 0); // no sq  to the left
+        const isRightEgde = (i % width === width -1); // no sq to the rigth
+    
+        if (squares[i].classList.contains('valid')) {
+          if (i > 0 && !isLeftEgde && squares[i -1].classList.contains('bomb')); total++;
+          if(i > 9 && !isRightEgde && squares[i +1 - width].classList.contains('bomb')); total ++;
+    
+          squares[i].setAttribute('data', total);
+          console.log(squares[i]);
+          
+        }
+    
+        
+      }
   }
 createBoard();
+
+function click(square) {
+  if(square.classList.contains('bomb')) {
+    console.log('Game Over');
+  } else {
+    let total = square.getAttribute('data');
+    if (total != 0) {
+      square.classList.add('checked');
+      square.innerHTML = total;
+      console.log(total);
+      
+      return;
+    }
+  }
+};
+
 });
