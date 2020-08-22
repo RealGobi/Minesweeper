@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 html {
   display: flex;
   justify-content: center;
@@ -15,14 +18,28 @@ html {
 .grid div {
   height: 40px;
   width: 40px;
+  border: 1px solid black;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .checked {
-  background-color: greenyellow;
+  background-color: lightgray;
 }
-.bomb {
-  background: firebrick;
+
+.one {
+  color: rgb(35, 161, 35);
+}
+
+.two {
+  color: rgb(88, 121, 57);
+}
+
+.three {
+  color: orange;
+}
+
+.four {
+  color: orangered;
 }
