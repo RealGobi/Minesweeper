@@ -1,3 +1,9 @@
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid {
   height: 400px;
   width: 400px;
@@ -9,6 +15,9 @@
 .grid div {
   height: 40px;
   width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .checked {
