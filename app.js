@@ -88,7 +88,8 @@ function click(square) {
   if(square.classList.contains('checked')) return;
   if (square.classList.contains('checked') || square.classList.contains('flag')) return;
   if(square.classList.contains('bomb')) {
-    console.log('Game Over');
+    // call gameOver
+    gameOver(square);
   } else {
     let total = square.getAttribute('data');
     if (total != 0) {
@@ -153,4 +154,19 @@ function chechSquare(square, currentID) {
   }, 10);
 };
 
+
+// game over
+
+function gameOver(square) {
+  console.log('BOOM! Game Over!!');
+  isGameOver = true;
+
+  // display bombs
+
+  squares.forEach(square => {
+    if (square.classList.contains('bomb')) {
+      square.innerHTML = '&#128163;'
+    }
+  });
+}
 });
